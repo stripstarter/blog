@@ -63,3 +63,7 @@ Pornography as a concept aside, the current practice and industry often violates
 However, by creating an inclusive crowdfunding platform we believe that the balance of power shifts closer to equality between the performer and consumer, and away from the practices of industry.
 
 In our current model, we create personas for people who have not given their express consent.  While common practice among tech companies, we are trying to come up with an alternative solution that does not violate dignity of those who do not wish to participate.
+
+**Contact**
+
+For anything not addressed here, please get in touch at [Gmail](mailto:stripstarter@gmail.com) or [Twitter](http://twitter.com/stripstarter).  Check out our source code on[Github](http://github.com/stripstarter/stripstarter).
