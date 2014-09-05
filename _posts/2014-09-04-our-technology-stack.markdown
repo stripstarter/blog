@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Stripstarter takes off its clothes"
+title:  "In which we take off our clothes"
 date:   2014-09-04 23:03:00
 categories: stripstarter technology
 ---
-# **Our Technology Stack**
+# **Our techology**
 
 [Stripstarter](http://stripstarter.us) is being built as a simple Ruby on Rails app, relying on rails to serve up HTML.  In fact at this point, while we do have some JSON-compatible endpoints, it is exclusively HTML-based with the exception of our search typeahead.  In this blog post I'd like to highlight the different technologies we've incorporated so far and what struggles we've run into with them.  Going through the closed [Github issues](http://github.com/stripstarter/stripstarter/issues?q=is%3Aissue+is%3Aclosed) in order should help me.
 
