@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hello, world!"
+title:  "Our first blog post"
 date:   2014-08-30 23:03:00
 categories: stripstarter general
 ---
