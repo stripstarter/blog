@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Stripstarter takes off its clothes"
-date:   2014-08-30 23:03:00
+date:   2014-09-04 23:03:00
 categories: stripstarter technology
 ---
 # **Our Technology Stack**
