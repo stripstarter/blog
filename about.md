@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-[Stripstarter](http://stripstarter.us) is a crowdfunding platform for media, notably pornography.
+[Stripstarter](http://stripstarter.org) is a crowdfunding platform for media, notably pornography.
 
 You can make and fund campaigns for photos or movies that don't exist yet focused on anyone from a celebrity to your barista to even yourself.
 

@@ -6,7 +6,7 @@ categories: stripstarter technology
 ---
 # **Our techology**
 
-[Stripstarter](http://stripstarter.us) is being built as a simple Ruby on Rails app, relying on rails to serve up HTML.  In fact at this point, while we do have some JSON-compatible endpoints, it is exclusively HTML-based with the exception of our search typeahead.  In this blog post I'd like to highlight the different technologies we've incorporated so far and what struggles we've run into with them.  Going through the closed [Github issues](http://github.com/stripstarter/stripstarter/issues?q=is%3Aissue+is%3Aclosed) in order should help me.
+[Stripstarter](http://stripstarter.org) is being built as a simple Ruby on Rails app, relying on rails to serve up HTML.  In fact at this point, while we do have some JSON-compatible endpoints, it is exclusively HTML-based with the exception of our search typeahead.  In this blog post I'd like to highlight the different technologies we've incorporated so far and what struggles we've run into with them.  Going through the closed [Github issues](http://github.com/stripstarter/stripstarter/issues?q=is%3Aissue+is%3Aclosed) in order should help me.
 
 #### [RSpec](http://rspec.info)
 

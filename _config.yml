@@ -3,7 +3,7 @@ title: Stripstarter
 email: stripstarter@gmail.com
 description: "Social crowdsourcing."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://stripstarter.us" # the base hostname & protocol for your site
+url: "http://stripstarter.org" # the base hostname & protocol for your site
 twitter_username: stripstarter
 github_username:  stripstarter
 
