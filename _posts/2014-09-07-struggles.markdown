@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some days, all you can do is laugh"
-date:   2014-09-04 23:03:00
+date:   2014-09-07 23:03:00
 categories: stripstarter troubleshooting
 ---
 

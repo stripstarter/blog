@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Fuck Chef"
+date:   2014-09-12 23:03:00
+categories: stripstarter troubleshooting
+---
+
+Well, today marks the third day I've seriously invested in learning chef.  **Here's what I've found:**
+
+1) If you don't mind uploading a bajillion dependency cookbooks to your hosted chef server, chef-client works fine on a VPS.
+
+I'd set up an Ubuntu 14.04 virtual machine.  Spin it up, grab it's IP address, `knife bootstrap` it, and run `knife ssh ...` to run chef-client on it.  This was good for basic cookbooks, like nginx.  My cookbook for an app server involves about 7 of what I'll call first-level dependencies (including nginx, postgresql, redis, etc.)  The idea of uploading every dependency seemed like a daunting chore.  I ended up doing it, and it was.
+
+What I found was there's this program to manage cookbooks and install them all for you, called Berkshelf.  Neat!
+
+2) Berkshelf works great with chef-solo
+
+Berkshelf seems to be designed for use with Vagrant, so I figured I'd just use Vagrant instead of a pure VM interface and I'd be able to just change the IP address when I wanted to spin up a production server, right?  Well, sorta.
+
+I installed vagrant, gave my machine a static IP on a private network, and went through Berkshelf just list my cookbooks, `berks install`, include them in my stripstarter-cookbook metadata.rb and recipe, and *voila*.  I figured I should start with chef-solo and get that working - and with some minor exceptions things installed pretty well in my vagrant machine.
+
+When it came time to switch over to chef-client provisioning, holy hell.  [Vagrant hell](https://github.com/berkshelf/vagrant-berkshelf/issues/188),  [Berkshelf hell](https://github.com/berkshelf/vagrant-berkshelf/issues/186), and after this special hell I decided to just scrap it.
+
+{% highlight bash %}
+E, [2014-09-12T17:57:58.260412 #70521] ERROR -- : Erb template app/views/campaigns/_form.html.erb has a syntax error:
+E, [2014-09-12T17:57:58.260586 #70521] ERROR -- : -:1: syntax error, unexpected ')'
+E, [2014-09-12T17:57:58.260631 #70521] ERROR -- : _buf = ''; _buf << ( form_for(@campaign) do |f| ).to_s; _buf << '
+E, [2014-09-12T17:57:58.260662 #70521] ERROR -- :                                                  ^
+E, [2014-09-12T17:57:58.260691 #70521] ERROR -- : -:22: syntax error, unexpected end-of-input, expecting ')'
+E, [2014-09-12T17:57:58.263545 #70521] ERROR -- : Ridley::Errors::CookbookSyntaxError: Invalid template files in cookbook: stripstarter (0.1.0).
+E, [2014-09-12T17:57:58.263651 #70521] ERROR -- : /Users/mzemel/.vagrant.d/gems/gems/ridley-4.0.0/lib/ridley/chef/cookbook.rb:201:in `validate'
+{% endhighlight %}
+
+Seriously, somehow I fucked up so bad my application code leaked into my chef recipe!  I had an old cookbook that was named the same as my application, but deleting that didn't seem to fix it.
+
+So whatever, I'll just provision vagrant and spin up servers using chef-solo.  Not the worst thing in the world, I guess.
+
+Lesson learned: chef-solo for vagrant, chef-client for VPSes?
